@@ -1,0 +1,17 @@
+C:\paradigm_industries> diskpart
+
+Microsoft DiskPart version 6.1.7601
+Copyright <C> 1999-2017 Microsoft Corporation.
+
+Diskpart> list volume
+
+    Volume #  |  Ltr  |  Label         |  Fs    |  Type       |  Size     |  Status
+    --------  |  ---  |  -----------   |  ----  |  ---------- |  -------  |  -------  
+    Volume 0  |   F   |  Duo Wolves    |  NTFS  |  Removable  |  9001 GB  |  Healthy
+    Volume 1  |   C   |  Paradigm Ind  |  NTFS  |  Partition  |  800 MB   |  Healthy
+    Volume 2  |   D   |  Gojira        |  NTFS  |  Partition  |  749 MB   |  Healthy
+    Volume 3  |   G   |  Kaiju         |  NTFS  |  Partition  |  10 MB    |  Healthy
+
+Diskpart> select volume 1
+
+Diskpart> enter username to continue
