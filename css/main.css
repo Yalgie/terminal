@@ -489,6 +489,7 @@ main { position: relative; height: 100%; }
 }
 #terminal div { color: #FFF; }
 #terminal div p { margin: 0px; margin-bottom: 5px; }
+/* Blinking cursor effect in terminal */
 #terminal div p::after {
     content: '';
 	display: inline-block;
