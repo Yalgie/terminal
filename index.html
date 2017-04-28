@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Terminal</title>
-    <link rel="stylesheet" type="text/css" href="terminal.css">
-    <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="terminal.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Dave - Can You Solve The Riddle?</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/terminal.js"></script>
 </head>
+
 <body>
-    <div tabindex="0" id="terminal">
-        <div></div>
-        <textarea rows="1"></textarea>
-    </div>
+	<div id="wrap">
+		<main>
+			<div class="computer_background">
+				<div class="computer_panel_window">
+					<div tabindex="0" id="terminal">
+						<div></div>
+						<textarea rows="1"></textarea>
+					</div>
+				</div>
+			</div>
+			
+			<div class="computer_screen_overlay"></div>
+		</main>
+	</div>
 </body>
 </html>
