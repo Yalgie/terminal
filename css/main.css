@@ -481,14 +481,22 @@ main { position: relative; height: 100%; }
 	color: #fff;
 	text-shadow: 0 0 2px rgba(255, 255, 255, 0.75);
     width: 100%;
-	height: 100%;
+	/* height: 100%;*/
     margin: 0px;
     padding: 0px;
     border: none;
     outline: none;
     resize: none;
+    min-height: auto;
 }
-#terminal div { color: #FFF; }
+#terminal div { 
+    /*color: #FFF; 
+    font-family: 'VT323';
+    font-size: 2.4em;
+    line-height: 1.5em;
+    color: #fff;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.75);*/
+}
 #terminal div p { margin: 0px; margin-bottom: 5px; }
 /* Blinking cursor effect in terminal */
 #terminal div p::after {

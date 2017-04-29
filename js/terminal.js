@@ -37,7 +37,7 @@ $(function() {
                 checkCommand();
             };
             
-            if ($cmd.val().length <= 23) {
+            if ($cmd.val().length <= dir.length) {
                 $cmd.val(dir);
             };
         });
@@ -77,6 +77,6 @@ $(function() {
     customConsoleLog("Visit us @ http://2wolves.io", "#1B1632", "#A292E7");
 
     bindTerminalEvents();
-    init();
+    // init();
 });
 
