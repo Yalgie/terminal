@@ -11,6 +11,17 @@ $(function() {
         }
     ];
 
+    function init() {
+        $.getJSON( "boot_text.json", function( data ) {
+            $.each(data.text, function(i) {
+                var str = data.text[i];
+                str = str.replace(/ /g,"&nbsp;");
+                str = str.replace(/-/g,"_");
+                $text.append(str + "<br/>");
+            })
+        });
+    };
+
     function bindTerminalEvents() {
         $terminal.on("focus", function() {
             $cmd.focus();
@@ -66,6 +77,6 @@ $(function() {
     customConsoleLog("Visit us @ http://2wolves.io", "#1B1632", "#A292E7");
 
     bindTerminalEvents();
-    // init();
+    init();
 });
 

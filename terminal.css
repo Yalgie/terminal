@@ -26,7 +26,7 @@ body {
 }
 #terminal div {
     color: #FFF;
-    font: 11px system-ui;
+    font: 11px helvetica;
 }
 #terminal div p {
     margin: 0px;
