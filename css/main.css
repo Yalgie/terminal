@@ -494,8 +494,9 @@ main { position: relative; height: 100%; }
     resize: none;
 }
 #terminal div { margin-bottom: 9px; }
-#terminal div p { margin: 0px; margin-bottom: 5px; }
+#terminal div p { font-size: inherit; line-height: inherit; margin: inherit; }
 /* Blinking cursor effect in terminal */
+/*
 #terminal div p::after {
     content: '';
 	display: inline-block;
@@ -509,6 +510,9 @@ main { position: relative; height: 100%; }
     -webkit-animation: cursor_blink 1.25s steps(1) infinite;
 			animation: cursor_blink 1.25s steps(1) infinite;
 }
+*/
+#terminal div p.confirm_return { background-color: rgba(0, 128, 0, 0.75); padding-left: 24px; }
+#terminal div p.error_return { background-color: rgba(255, 0, 0, 0.75); padding-left: 24px; }
 
 @-webkit-keyframes cursor_blink {
 	0% { opacity: 0; }

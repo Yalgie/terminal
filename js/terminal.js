@@ -5,8 +5,8 @@ $(function() {
     var user = false;
     var pass = false;
     var username = "dave";
-    var password = "grimrasputinisdead";
-    var anogram = "paradigm industries";
+    var password = "grim rasputin is dead";
+    var anagram = "paradigm industries";
 
     var dir = "Please enter username: ";
 
@@ -65,34 +65,34 @@ $(function() {
             var cmd = $cmd.val().split(dir)[1].toLowerCase();
             var valid = false;
             console.log(cmd)
-            if (pass && cmd == anogram) {
+            if (pass && cmd == anagram) {
                 $text.append(dir + cmd + "<br/>");
-                $text.append("Anogram accepted<br/>");
+                $text.append("<p class='confirm_return'>Anagram accepted</p>");
                 startDirList()
             }
             else if (pass) {
                 $text.append(dir + $cmd.val().split(dir)[1] + "<br/>");
-                $text.append("anogram incorrect <br/>");
+                $text.append("<p class='error_return'>Anagram incorrect</p>");
                 $cmd.val(dir);
             };
 
             if (!user && cmd == username) {
                 user = true;
                 $text.append(dir + cmd + "<br/>");
-                $text.append("Username recognised<br/>");
+                $text.append("<p class='confirm_return'>Username recognised</p>");
                 dir = "Please enter password: ";
                 $cmd.val(dir);
             }
             else if (user && cmd == password) {
                 pass = true;
                 $text.append(dir + cmd + "<br/>");
-                $text.append("Password accepted<br/>");
-                dir = "Please enter anogram: ";
+                $text.append("<p class='confirm_return'>Password accepted</p>");
+                dir = "Please enter anagram: ";
                 $cmd.val(dir);
             }
             else if (!pass) {
                 $text.append(dir + $cmd.val().split(dir)[1] + "<br/>");
-                user ? $text.append("password incorrect <br/>") : $text.append("username incorrect <br/>");
+                user ? $text.append("<p class='error_return'>Password incorrect</p>") : $text.append("<p class='error_return'>Username incorrect</p>");
                 $cmd.val(dir);
             };
 
