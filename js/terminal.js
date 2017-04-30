@@ -3,8 +3,10 @@ $(function() {
     var $cmd = $terminal.find("textarea");
     var $text = $terminal.find("div");
     var user = false;
+    var pass = false;
     var username = "dave";
-    var password = "pass";
+    var password = "grimrasputinisdead";
+    var anogram = "paradigm industries";
 
     var dir = "Please enter username: ";
 
@@ -20,7 +22,7 @@ $(function() {
                         iCount++;
                         addLine();
                         $terminal.scrollTop($terminal[0].scrollHeight);
-                    }, 100);
+                    }, 600);
                 }
                 else {
                     bindTerminalEvents();
@@ -31,7 +33,7 @@ $(function() {
             setTimeout(function(){
                 addLine();
                 $terminal.scrollTop($terminal[0].scrollHeight);
-            }, 100);
+            }, 600);
         });
     };
 
@@ -62,22 +64,39 @@ $(function() {
         if ($cmd.val().split(dir)[1] != undefined) {
             var cmd = $cmd.val().split(dir)[1].toLowerCase();
             var valid = false;
+            console.log(cmd)
+            if (pass && cmd == anogram) {
+                $text.append(dir + cmd + "<br/>");
+                $text.append("Anogram accepted<br/>");
+                startDirList()
+            }
+            else if (pass) {
+                $text.append(dir + $cmd.val().split(dir)[1] + "<br/>");
+                $text.append("anogram incorrect <br/>");
+                $cmd.val(dir);
+            };
 
             if (!user && cmd == username) {
                 user = true;
                 $text.append(dir + cmd + "<br/>");
+                $text.append("Username recognised<br/>");
                 dir = "Please enter password: ";
                 $cmd.val(dir);
             }
             else if (user && cmd == password) {
-                alert("Redirect?");
+                pass = true;
+                $text.append(dir + cmd + "<br/>");
+                $text.append("Password accepted<br/>");
+                dir = "Please enter anogram: ";
+                $cmd.val(dir);
             }
-            else {
+            else if (!pass) {
                 $text.append(dir + $cmd.val().split(dir)[1] + "<br/>");
                 user ? $text.append("password incorrect <br/>") : $text.append("username incorrect <br/>");
                 $cmd.val(dir);
             };
 
+            
             $terminal.scrollTop($terminal[0].scrollHeight);
         };
     };
@@ -85,6 +104,10 @@ $(function() {
     function customConsoleLog(message, bg, color) {
         console.log('%c:: ' + message + ' :: ', 'background: ' + bg + '; color: ' + color + '');
     };
+
+    function startDirList() {
+        console.log('h')
+    }
 
     customConsoleLog("Dave Terminal // Developed by 2Wolves", "#1B1632", "#A292E7");
     customConsoleLog("Visit us @ http://2wolves.io", "#1B1632", "#A292E7");
