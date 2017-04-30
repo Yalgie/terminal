@@ -20,7 +20,7 @@ $(function() {
                         iCount++;
                         addLine();
                         $terminal.scrollTop($terminal[0].scrollHeight);
-                    }, 100);
+                    }, 600);
                 }
                 else {
                     bindTerminalEvents();
@@ -31,7 +31,7 @@ $(function() {
             setTimeout(function(){
                 addLine();
                 $terminal.scrollTop($terminal[0].scrollHeight);
-            }, 100);
+            }, 600);
         });
     };
 
