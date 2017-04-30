@@ -3,7 +3,7 @@ $(function() {
     var $cmd = $terminal.find("textarea");
     var $text = $terminal.find("div");
 
-    var dir = "C:> ";
+    var dir = "C:\\paradigm_industries> ";
     var valid_commands = [
         {
             "cmd": "hello",
