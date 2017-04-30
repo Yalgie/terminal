@@ -2,23 +2,36 @@ $(function() {
     var $terminal = $("#terminal");
     var $cmd = $terminal.find("textarea");
     var $text = $terminal.find("div");
+    var user = false;
+    var username = "dave";
+    var password = "pass";
 
-    var dir = "C:> ";
-    var valid_commands = [
-        {
-            "cmd": "hello",
-            "response": "Oh Herro"
-        }
-    ];
+    var dir = "Please enter username: ";
 
     function init() {
         $.getJSON( "boot_text.json", function( data ) {
-            $.each(data.text, function(i) {
-                var str = data.text[i];
-                str = str.replace(/ /g,"&nbsp;");
-                str = str.replace(/-/g,"_");
-                $text.append(str + "<br/>");
-            })
+            var iCount = 0;
+
+            function addLine() {
+                $text.append(data.text[iCount])
+
+                if (iCount < data.text.length) {
+                    setTimeout(function(){
+                        iCount++;
+                        addLine();
+                        $terminal.scrollTop($terminal[0].scrollHeight);
+                    }, 100);
+                }
+                else {
+                    bindTerminalEvents();
+                    $cmd.focus();
+                }
+            };
+
+            setTimeout(function(){
+                addLine();
+                $terminal.scrollTop($terminal[0].scrollHeight);
+            }, 100);
         });
     };
 
@@ -50,18 +63,18 @@ $(function() {
             var cmd = $cmd.val().split(dir)[1].toLowerCase();
             var valid = false;
 
-            for (var i = 0; i < valid_commands.length; i++) {
-                if (cmd == valid_commands[i].cmd.toLowerCase()) {
-                    $text.append(dir + $cmd.val().split(dir)[1] + "<br/>");
-                    $text.append(valid_commands[i].response + "<br/>");
-                    valid = true;
-                    $cmd.val(dir);
-                };
-            };
-            
-            if (!valid && cmd.length > 0) {
+            if (!user && cmd == username) {
+                user = true;
+                $text.append(dir + cmd + "<br/>");
+                dir = "Please enter password: ";
+                $cmd.val(dir);
+            }
+            else if (user && cmd == password) {
+                alert("Redirect?");
+            }
+            else {
                 $text.append(dir + $cmd.val().split(dir)[1] + "<br/>");
-                $text.append("command not found: " + $cmd.val().split(dir)[1] + "<br/>");
+                user ? $text.append("password incorrect <br/>") : $text.append("username incorrect <br/>");
                 $cmd.val(dir);
             };
 
@@ -76,7 +89,6 @@ $(function() {
     customConsoleLog("Dave Terminal // Developed by 2Wolves", "#1B1632", "#A292E7");
     customConsoleLog("Visit us @ http://2wolves.io", "#1B1632", "#A292E7");
 
-    bindTerminalEvents();
-    // init();
+    init();
 });
 

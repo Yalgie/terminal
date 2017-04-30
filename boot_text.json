@@ -1,12 +1,16 @@
 {
     "text": [
-        "C:> diskpart",
-        "Microsoft DiskPart version 6.1.7601",
-        "Copyright <C> 1999-2017 Microsoft Corporation.",
-        "Diskpart> list volume",
-        "<table><thead><tr><th>Volume #</th><th>Ltr</th><th>Label</th><th>Fs</th><th>Type</th><th>Size</th><th>Status</th></tr></thead><tbody><tr><td>Volume 0</td><td>F</td><td>Duo Wolves</td><td>NTFS</td><td>Removable</td><td>9001 GB</td><td>Healthy</td></tr><tr><td>Volume 1</td><td>C</td><td>Paradigm Ind</td><td>NTFS</td><td>Partition</td><td>800 MB</td><td>Healthy</td></tr><tr><td>Volume 2</td><td>D</td><td>Gojira</td><td>NTFS</td><td>Partition</td><td>749 MB</td><td>Healthy</td></tr><tr><td>Volume 3</td><td>G</td><td>Kaiju</td><td>NTFS</td><td>Partition</td><td>10 MB</td><td>Healthy</td></tr></tbody></table>",
-        "Diskpart> select volume 1",
-        "Diskpart> enter username to continue"
+        "C:> diskpart<br/><br/>",
+        "Microsoft DiskPart version 6.1.7601<br/>",
+        "Copyright <C> 1999-2017 Microsoft Corporation.<br/><br/>",
+        "Diskpart> list volume<br/>",
+        "<table><thead><tr><th>Volume #</th><th>Ltr</th><th>Label</th><th>Fs</th><th>Type</th><th>Size</th><th>Status</th></tr></thead></table>",
+        "<table><tbody><tr><td>Volume 0</td><td>F</td><td>Duo Wolves</td><td>NTFS</td><td>Removable</td><td>9001 GB</td><td>Healthy</td></tr></tbody></table>",
+        "<table><tbody><tr><td>Volume 1</td><td>C</td><td>Paradigm Ind</td><td>NTFS</td><td>Partition</td><td>800 MB</td><td>Healthy</td></tr></tbody></table>",
+        "<table><tbody><tr><td>Volume 2</td><td>D</td><td>Gojira</td><td>NTFS</td><td>Partition</td><td>749 MB</td><td>Healthy</td></tr></tbody></table>",
+        "<table><tbody><tr><td>Volume 3</td><td>G</td><td>Kaiju</td><td>NTFS</td><td>Partition</td><td>10 MB</td><td>Healthy</td></tr></tbody></table><br/><br/>",
+        "Diskpart> select volume 1<br/><br/>",
+        "Diskpart> enter username to continue<br/><br/>"
     ]
 }
 
