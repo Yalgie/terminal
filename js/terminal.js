@@ -1,6 +1,7 @@
 $(function() {
     var $terminal = $("#terminal");
     var $cmd = $terminal.find(".typing");
+    var $cmdPrefix = $terminal.find(".cmdPrefix");
     var $text = $terminal.find(".text");
     var user = false;
     var pass = false;
@@ -56,7 +57,7 @@ $(function() {
             // };
         });
 
-        $text.append("Please enter your username: <br/>");
+        $cmdPrefix.html("Enter Username: ");
     };
 
     function checkCommand() {
@@ -64,44 +65,51 @@ $(function() {
             var cmd = $cmd.text().toLowerCase();
             var valid = false;
 
+            $text.append(cmd + "<br/>")
             if (pass && cmd == anagram) {
                 // $text.append("Anogram: " + cmd + "<br/>");
-                $text.append(cmd + ": <span class='correct'>Anagram Accepted</span> <br/>");
+                $text.append("<span class='correct'>Anagram Accepted</span> <br/>");
+                $cmd.html("")
+                $cmdPrefix.html("")
                 startDirList()
             }
             else if (pass) {
                 // $text.append("Anogram: " + cmd + "<br/>");
-                $text.append(cmd + ": <span class='incorrect'>Anagram Incorrect</span> <br/>");
-                $text.append("Enter Anagram:<br/>");
+                $text.append("<span class='incorrect'>Anagram Incorrect</span> <br/>");
+                $cmdPrefix.html("Enter Anagram:");
             };
 
             if (!user && cmd == username) {
                 user = true;
                 // $text.append("Username: " + cmd + "<br/>");
-                $text.append(cmd + ": <span class='correct'>Username Recognised</span><br/>");
-                $text.append("Enter Password:<br/>");
+                $text.append("<span class='correct'>Username Recognised</span><br/>");
+                // $text.append("Enter Password:<br/>");
+                $cmdPrefix.html("Enter Password:")
             }
             else if (user && cmd == password) {
                 pass = true;
                 // $text.append("Password " + cmd + "<br/>");
-                $text.append(cmd + ": <span class='correct'>Password Accepted</span><br/>");
-                $text.append("Enter Anagram:<br/>");
+                $text.append("<span class='correct'>Password Accepted</span><br/>");
+                // $text.append("Enter Anagram:<br/>");
+                $cmdPrefix.html("Enter Anagram:")
                 // $cmd.val(dir);
             }
             else if (!pass) {
                 if (user) {
                     // $text.append("Password " + cmd + "<br/>");
-                    $text.append(cmd + ": <span class='incorrect'>Password Incorrect</span> <br/>")
-                    $text.append("Enter Password:<br/>")
+                    $text.append("<span class='incorrect'>Password Incorrect</span> <br/>")
+                    // $text.append("Enter Password:<br/>")
+                    $cmdPrefix.html("Enter Password:")
                 }
                 else {
                     // $text.append("Username " + cmd + "<br/>");
-                    $text.append(cmd + ": <span class='incorrect'>Username Incorrect</span> <br/>")
-                    $text.append("Enter Username:<br/>")
+                    $text.append("<span class='incorrect'>Username Incorrect</span> <br/>")
+                    // $text.append("Enter Username:<br/>")
+                    $cmdPrefix.html("Enter Username:")
                 }
             };
 
-            $cmd.html("");
+            $cmd.html("")
             $terminal.scrollTop($terminal[0].scrollHeight);
         };
     };
