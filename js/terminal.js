@@ -65,9 +65,9 @@ $(function() {
             var cmd = $cmd.text().toLowerCase();
             var valid = false;
 
-            $text.append(cmd + "<br/>")
             if (pass && cmd == anagram) {
                 // $text.append("Anogram: " + cmd + "<br/>");
+                $text.append("Enter Anagram: " + cmd + "<br/>")
                 $text.append("<span class='correct'>Anagram Accepted</span> <br/>");
                 $cmd.html("")
                 $cmdPrefix.html("")
@@ -75,6 +75,7 @@ $(function() {
             }
             else if (pass) {
                 // $text.append("Anogram: " + cmd + "<br/>");
+                $text.append("Enter Anagram: " + cmd + "<br/>")
                 $text.append("<span class='incorrect'>Anagram Incorrect</span> <br/>");
                 $cmdPrefix.html("Enter Anagram:");
             };
@@ -82,6 +83,7 @@ $(function() {
             if (!user && cmd == username) {
                 user = true;
                 // $text.append("Username: " + cmd + "<br/>");
+                $text.append("Enter Username: " + cmd + "<br/>")
                 $text.append("<span class='correct'>Username Recognised</span><br/>");
                 // $text.append("Enter Password:<br/>");
                 $cmdPrefix.html("Enter Password:")
@@ -89,6 +91,7 @@ $(function() {
             else if (user && cmd == password) {
                 pass = true;
                 // $text.append("Password " + cmd + "<br/>");
+                $text.append("Enter Password: " + cmd + "<br/>")
                 $text.append("<span class='correct'>Password Accepted</span><br/>");
                 // $text.append("Enter Anagram:<br/>");
                 $cmdPrefix.html("Enter Anagram:")
@@ -97,12 +100,14 @@ $(function() {
             else if (!pass) {
                 if (user) {
                     // $text.append("Password " + cmd + "<br/>");
+                    $text.append("Enter Password: " + cmd + "<br/>")
                     $text.append("<span class='incorrect'>Password Incorrect</span> <br/>")
                     // $text.append("Enter Password:<br/>")
                     $cmdPrefix.html("Enter Password:")
                 }
                 else {
                     // $text.append("Username " + cmd + "<br/>");
+                    $text.append("Enter Username: " + cmd + "<br/>")
                     $text.append("<span class='incorrect'>Username Incorrect</span> <br/>")
                     // $text.append("Enter Username:<br/>")
                     $cmdPrefix.html("Enter Username:")
