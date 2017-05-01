@@ -5,9 +5,9 @@ $(function() {
     var user = false;
     var pass = false;
     var username = "dave";
-    var password = "grimrasputinisdead";
-    var anogram = "paradigm industries";
-    var typeSpeed = 50;
+    var password = "grim rasputin is dead";
+    var anagram = "paradigm industries";
+    var typeSpeed = 200;
 
     function init() {
         $.getJSON( "boot_text.json", function( data ) {
@@ -56,7 +56,7 @@ $(function() {
             // };
         });
 
-        $text.append("Enter username: <br/>");
+        $text.append("Please enter your username: <br/>");
     };
 
     function checkCommand() {
@@ -64,39 +64,39 @@ $(function() {
             var cmd = $cmd.text().toLowerCase();
             var valid = false;
 
-            if (pass && cmd == anogram) {
+            if (pass && cmd == anagram) {
                 // $text.append("Anogram: " + cmd + "<br/>");
-                $text.append(cmd + ": <span class='correct'>Anogram accepted</span> <br/>");
+                $text.append(cmd + ": <span class='correct'>Anagram Accepted</span> <br/>");
                 startDirList()
             }
             else if (pass) {
                 // $text.append("Anogram: " + cmd + "<br/>");
-                $text.append(cmd + ": <span class='incorrect'>anogram incorrect</span> <br/>");
-                $text.append("Enter anogram:<br/>");
+                $text.append(cmd + ": <span class='incorrect'>Anagram Incorrect</span> <br/>");
+                $text.append("Enter Anagram:<br/>");
             };
 
             if (!user && cmd == username) {
                 user = true;
                 // $text.append("Username: " + cmd + "<br/>");
-                $text.append(cmd + ": <span class='correct'>Username recognised</span><br/>");
-                $text.append("Enter password:<br/>");
+                $text.append(cmd + ": <span class='correct'>Username Recognised</span><br/>");
+                $text.append("Enter Password:<br/>");
             }
             else if (user && cmd == password) {
                 pass = true;
                 // $text.append("Password " + cmd + "<br/>");
-                $text.append(cmd + ": <span class='correct'>Password accepted</span><br/>");
-                $text.append("Enter anogram:<br/>");
+                $text.append(cmd + ": <span class='correct'>Password Accepted</span><br/>");
+                $text.append("Enter Anagram:<br/>");
                 // $cmd.val(dir);
             }
             else if (!pass) {
                 if (user) {
                     // $text.append("Password " + cmd + "<br/>");
-                    $text.append(cmd + ": <span class='incorrect'>password incorrect</span> <br/>")
-                    $text.append("Enter password:<br/>")
+                    $text.append(cmd + ": <span class='incorrect'>Password Incorrect</span> <br/>")
+                    $text.append("Enter Password:<br/>")
                 }
                 else {
                     // $text.append("Username " + cmd + "<br/>");
-                    $text.append(cmd + ": <span class='incorrect'>username incorrect</span> <br/>")
+                    $text.append(cmd + ": <span class='incorrect'>Username Incorrect</span> <br/>")
                     $text.append("Enter Username:<br/>")
                 }
             };
