@@ -486,7 +486,6 @@ main { position: relative; height: 100%; }
 	color: #fff;
 	text-shadow: 0 0 2px rgba(255, 255, 255, 0.75);
     width: 100%;
-	/* height: 100%; */
     min-height: auto;
     margin: 0px;
     padding: 0px;
@@ -496,7 +495,7 @@ main { position: relative; height: 100%; }
 }
 #terminal .typing:focus { color: transparent; text-shadow: 0 0 0 #fff, 0 0 2px rgba(255, 255, 255, 0.75); }
 #terminal .text { margin-bottom: 9px; }
-#terminal .text p { margin: 0px; margin-bottom: 5px; }
+
 /* Blinking cursor effect in terminal */
 #terminal .typing::after {
     content: '';
@@ -523,26 +522,11 @@ main { position: relative; height: 100%; }
 	100% { opacity: 0; }
 }
 
-span.incorrect {
-    color: red;
-}
-span.correct {
-    color: green;
-}
-span.space-05 {
-    padding-left: 30px;
-}
-span.space-1 {
-    padding-left: 50px;
-}
-span.space-25 {
-    padding-left: 80px;
-}
-span.space-2 {
-    padding-left: 100px;
-}
+span.incorrect { color: #f22121; text-shadow: 0 0 2px rgba(237, 47, 47, 0.75); }
+span.correct { color: #2ece2e; text-shadow: 0 0 2px rgba(50, 250, 50, 0.75); }
+span.space-05 { padding-left: 30px; }
+span.space-1 { padding-left: 50px; }
+span.space-25 { padding-left: 80px; }
+span.space-2 { padding-left: 100px; }
 
-.cmd-entry {
-    user-select: none;
-    padding-right: 15px;
-}
+.cmd-entry { user-select: none; padding-right: 15px; }
