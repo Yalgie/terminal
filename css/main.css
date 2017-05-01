@@ -540,3 +540,8 @@ span.space-25 {
 span.space-2 {
     padding-left: 100px;
 }
+
+.cmd-entry {
+    user-select: none;
+    padding-right: 15px;
+}
