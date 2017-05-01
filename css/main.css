@@ -497,16 +497,16 @@ main { position: relative; height: 100%; }
 #terminal .text { margin-bottom: 9px; }
 #terminal .text p { margin: 0px; margin-bottom: 5px; }
 /* Blinking cursor effect in terminal */
-#terminal .text p::after {
+#terminal .typing::after {
     content: '';
 	display: inline-block;
-    background-color: #1ff042;
-    width: 0.75em;
+    background-color: #fff;
+    width: 0.48em;
     height: 1em;
-    margin-left: 5px;
-    vertical-align: -0.15em;
-    -webkit-box-shadow: 1px 1px 1px rgba(31, 240, 66, 0.65), -1px -1px 1px rgba(31, 240, 66, 0.65), 1px -1px 1px rgba(31, 240, 66, 0.65), -1px 1px 1px rgba(31, 240, 66, 0.65);
-			box-shadow: 1px 1px 1px rgba(31, 240, 66, 0.65), -1px -1px 1px rgba(31, 240, 66, 0.65), 1px -1px 1px rgba(31, 240, 66, 0.65), -1px 1px 1px rgba(31, 240, 66, 0.65);
+    margin-left: 2px;
+    vertical-align: -0.20em;
+    -webkit-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65), -1px -1px 1px rgba(255, 255, 255, 0.65), 1px -1px 1px rgba(226, 245, 229, 0.65), -1px 1px 1px rgba(213, 247, 218, 0.65);
+			box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65), -1px -1px 1px rgba(255, 255, 255, 0.65), 1px -1px 1px rgba(226, 245, 229, 0.65), -1px 1px 1px rgba(213, 247, 218, 0.65);
     -webkit-animation: cursor_blink 1.25s steps(1) infinite;
 			animation: cursor_blink 1.25s steps(1) infinite;
 }
