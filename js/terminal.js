@@ -1,14 +1,13 @@
 $(function() {
     var $terminal = $("#terminal");
-    var $cmd = $terminal.find("textarea");
-    var $text = $terminal.find("div");
+    var $cmd = $terminal.find(".typing");
+    var $text = $terminal.find(".text");
     var user = false;
     var pass = false;
     var username = "dave";
     var password = "grimrasputinisdead";
     var anogram = "paradigm industries";
-
-    var dir = "Please enter username: ";
+    var typeSpeed = 50;
 
     function init() {
         $.getJSON( "boot_text.json", function( data ) {
@@ -22,7 +21,7 @@ $(function() {
                         iCount++;
                         addLine();
                         $terminal.scrollTop($terminal[0].scrollHeight);
-                    }, 600);
+                    }, typeSpeed);
                 }
                 else {
                     bindTerminalEvents();
@@ -33,7 +32,7 @@ $(function() {
             setTimeout(function(){
                 addLine();
                 $terminal.scrollTop($terminal[0].scrollHeight);
-            }, 600);
+            }, typeSpeed);
         });
     };
 
@@ -43,7 +42,7 @@ $(function() {
         });
 
         $cmd.on("focus", function() {
-            $cmd.html($cmd.val());
+            $cmd.html($cmd.html());
         });
 
         $terminal.on("keydown", function(e) {
@@ -52,51 +51,57 @@ $(function() {
                 checkCommand();
             };
             
-            if ($cmd.val().length <= dir.length) {
-                $cmd.val(dir);
-            };
+            // if ($cmd.html().length <= dir.length) {
+            //     $cmd.html(dir);
+            // };
         });
 
-        $cmd.val(dir);
+        $text.append("Enter username: <br/>");
     };
 
     function checkCommand() {
-        if ($cmd.val().split(dir)[1] != undefined) {
-            var cmd = $cmd.val().split(dir)[1].toLowerCase();
+        if ($cmd.text() != undefined) {
+            var cmd = $cmd.text().toLowerCase();
             var valid = false;
-            console.log(cmd)
+
             if (pass && cmd == anogram) {
-                $text.append(dir + cmd + "<br/>");
-                $text.append("Anogram accepted<br/>");
+                // $text.append("Anogram: " + cmd + "<br/>");
+                $text.append(cmd + ": <span class='correct'>Anogram accepted</span> <br/>");
                 startDirList()
             }
             else if (pass) {
-                $text.append(dir + $cmd.val().split(dir)[1] + "<br/>");
-                $text.append("anogram incorrect <br/>");
-                $cmd.val(dir);
+                // $text.append("Anogram: " + cmd + "<br/>");
+                $text.append(cmd + ": <span class='incorrect'>anogram incorrect</span> <br/>");
+                $text.append("Enter anogram:<br/>");
             };
 
             if (!user && cmd == username) {
                 user = true;
-                $text.append(dir + cmd + "<br/>");
-                $text.append("Username recognised<br/>");
-                dir = "Please enter password: ";
-                $cmd.val(dir);
+                // $text.append("Username: " + cmd + "<br/>");
+                $text.append(cmd + ": <span class='correct'>Username recognised</span><br/>");
+                $text.append("Enter password:<br/>");
             }
             else if (user && cmd == password) {
                 pass = true;
-                $text.append(dir + cmd + "<br/>");
-                $text.append("Password accepted<br/>");
-                dir = "Please enter anogram: ";
-                $cmd.val(dir);
+                // $text.append("Password " + cmd + "<br/>");
+                $text.append(cmd + ": <span class='correct'>Password accepted</span><br/>");
+                $text.append("Enter anogram:<br/>");
+                // $cmd.val(dir);
             }
             else if (!pass) {
-                $text.append(dir + $cmd.val().split(dir)[1] + "<br/>");
-                user ? $text.append("password incorrect <br/>") : $text.append("username incorrect <br/>");
-                $cmd.val(dir);
+                if (user) {
+                    // $text.append("Password " + cmd + "<br/>");
+                    $text.append(cmd + ": <span class='incorrect'>password incorrect</span> <br/>")
+                    $text.append("Enter password:<br/>")
+                }
+                else {
+                    // $text.append("Username " + cmd + "<br/>");
+                    $text.append(cmd + ": <span class='incorrect'>username incorrect</span> <br/>")
+                    $text.append("Enter Username:<br/>")
+                }
             };
 
-            
+            $cmd.html("");
             $terminal.scrollTop($terminal[0].scrollHeight);
         };
     };
@@ -106,7 +111,31 @@ $(function() {
     };
 
     function startDirList() {
-        console.log('h')
+        $.getJSON( "dir_text.json", function( data ) {
+            console.log(data)
+            var iCount = 0;
+
+            function addLine() {
+                $text.append(data.text[iCount])
+
+                if (iCount < data.text.length) {
+                    setTimeout(function(){
+                        iCount++;
+                        addLine();
+                        $terminal.scrollTop($terminal[0].scrollHeight);
+                    }, typeSpeed);
+                }
+                else {
+                    // bindTerminalEvents();
+                    $cmd.focus();
+                }
+            };
+
+            setTimeout(function(){
+                addLine();
+                $terminal.scrollTop($terminal[0].scrollHeight);
+            }, typeSpeed);
+        });
     }
 
     customConsoleLog("Dave Terminal // Developed by 2Wolves", "#1B1632", "#A292E7");

@@ -478,8 +478,9 @@ main { position: relative; height: 100%; }
     margin: 0 auto;
     overflow-x: hidden;
 	overflow-y: auto;
+    outline: none;
 }
-#terminal textarea {
+#terminal .typing {
     background-color: transparent;
 	font-family: 'VT323';
 	color: #fff;
@@ -493,10 +494,10 @@ main { position: relative; height: 100%; }
     outline: none;
     resize: none;
 }
-#terminal div { margin-bottom: 9px; }
-#terminal div p { margin: 0px; margin-bottom: 5px; }
+#terminal .text { margin-bottom: 9px; }
+#terminal .text p { margin: 0px; margin-bottom: 5px; }
 /* Blinking cursor effect in terminal */
-#terminal div p::after {
+#terminal .text p::after {
     content: '';
 	display: inline-block;
     background-color: #1ff042;
@@ -519,4 +520,23 @@ main { position: relative; height: 100%; }
 	0% { opacity: 0; }
 	50% { opacity: 1; }
 	100% { opacity: 0; }
+}
+
+span.incorrect {
+    color: red;
+}
+span.correct {
+    color: green;
+}
+span.space-05 {
+    padding-left: 30px;
+}
+span.space-1 {
+    padding-left: 50px;
+}
+span.space-25 {
+    padding-left: 80px;
+}
+span.space-2 {
+    padding-left: 100px;
 }
