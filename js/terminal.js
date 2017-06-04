@@ -84,7 +84,7 @@ $(function() {
                 user = true;
                 // $text.append("Username: " + cmd + "<br/>");
                 $text.append("Enter Username: " + cmd + "<br/>")
-                $text.append("<span class='correct'>Username Recognised</span><br/>");
+                $text.append("<span class='correct'>Username Recognized</span><br/>");
                 // $text.append("Enter Password:<br/>");
                 $cmdPrefix.html("Enter Password:")
             }
@@ -94,7 +94,7 @@ $(function() {
                 $text.append("Enter Password: " + cmd + "<br/>")
                 $text.append("<span class='correct'>Password Accepted</span><br/>");
                 // $text.append("Enter Anagram:<br/>");
-                $cmdPrefix.html("Enter Anagram:")
+                $cmdPrefix.html("For 2-step authentication, please rearrange the following letters into correct order<br/>GRIMRASPUTINISDEAD ->")
                 // $cmd.val(dir);
             }
             else if (!pass) {

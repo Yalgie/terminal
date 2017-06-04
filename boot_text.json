@@ -1,14 +1,11 @@
 {
     "text": [
         "C:> diskpart<br/><br/>",
-        "Microsoft DiskPart version 6.1.7601<br/>",
-        "Copyright <C> 1999-2017 Microsoft Corporation.<br/><br/>",
         "Diskpart> list volume<br/>",
-        "<table><thead><tr><th width='175px'>Volume #</th><th width='175px'>Ltr</th><th width='175px'>Label</th><th width='175px'>Fs</th><th width='175px'>Type</th><th width='175px'>Size</th><th width='175px'>Status</th></tr></thead></table>",
-        "<table><tbody><tr><td width='175px'>Volume 0</td><td width='175px'>F</td><td width='175px'>Duo Wolves</td><td width='175px'>NTFS</td><td width='175px'>Removable</td><td width='175px'>9001 GB</td><td width='175px'>Healthy</td></tr></tbody></table>",
-        "<table><tbody><tr><td width='175px'>Volume 1</td><td width='175px'>C</td><td width='175px'>Paradigm Ind</td><td width='175px'>NTFS</td><td width='175px'>Partition</td><td width='175px'>800 MB</td><td width='175px'>Healthy</td></tr></tbody></table>",
-        "<table><tbody><tr><td width='175px'>Volume 2</td><td width='175px'>D</td><td width='175px'>Gojira</td><td width='175px'>NTFS</td><td width='175px'>Partition</td><td width='175px'>749 MB</td><td width='175px'>Healthy</td></tr></tbody></table>",
-        "<table><tbody><tr><td width='175px'>Volume 3</td><td width='175px'>G</td><td width='175px'>Kaiju</td><td width='175px'>NTFS</td><td width='175px'>Partition</td><td width='175px'>10 MB</td><td width='175px'>Healthy</td></tr></tbody></table><br/>",
+        "<table><thead><tr><th width='175px'>Volume #</th><th width='175px'>Label</th><th width='175px'>Size</th><th width='175px'>Status</th></tr></thead></table>",
+        "<table><tbody><tr><td width='175px'>Volume 0</td><td width='175px'>Paradigm Ind</td><td width='175px'>2300 MB</td><td width='175px'>Healthy</td></tr></tbody></table>",
+        "<table><tbody><tr><td width='175px'>Volume 1</td><td width='175px'>Main Drive</td><td width='175px'>498 GB</td><td width='175px'>Healthy</td></tr></tbody></table>",
+        "<table><tbody><tr><td width='175px'>Volume 2</td><td width='175px'>Recovery Drive</td><td width='175px'>800 MB</td><td width='175px'>Healthy</td></tr></tbody></table><br/>",
         "Diskpart> select volume 1<br/>",
         "Diskpart> enter username to continue<br/><br/>"
     ]
