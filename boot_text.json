@@ -2,10 +2,10 @@
     "text": [
         "C:> diskpart<br/><br/>",
         "Diskpart> list volume<br/>",
-        "<table><thead><tr><th width='175px'>Volume #</th><th width='175px'>Label</th><th width='175px'>Size</th><th width='175px'>Status</th></tr></thead></table>",
-        "<table><tbody><tr><td width='175px'>Volume 0</td><td width='175px'>Paradigm Ind</td><td width='175px'>2300 MB</td><td width='175px'>Healthy</td></tr></tbody></table>",
-        "<table><tbody><tr><td width='175px'>Volume 1</td><td width='175px'>Main Drive</td><td width='175px'>498 GB</td><td width='175px'>Healthy</td></tr></tbody></table>",
-        "<table><tbody><tr><td width='175px'>Volume 2</td><td width='175px'>Recovery Drive</td><td width='175px'>800 MB</td><td width='175px'>Healthy</td></tr></tbody></table><br/>",
+        "<table><thead><tr><th width='175px'>Volume #</th><th width='175px'>Label</th><th width='175px'>Size</th><th width='175px'>Type</th></tr></thead></table>",
+        "<table><tbody><tr><td width='175px'>Volume 0</td><td width='175px'>Paradigm Ind</td><td width='175px'>2300 MB</td><td width='175px'>CD-ROM</td></tr></tbody></table>",
+        "<table><tbody><tr><td width='175px'>Volume 1</td><td width='175px'>Main Drive</td><td width='175px'>498 GB</td><td width='175px'>Partition</td></tr></tbody></table>",
+        "<table><tbody><tr><td width='175px'>Volume 2</td><td width='175px'>Recovery Drive</td><td width='175px'>800 MB</td><td width='175px'>Removable</td></tr></tbody></table><br/>",
         "Diskpart> select volume 1<br/>",
         "Diskpart> enter username to continue<br/><br/>"
     ]

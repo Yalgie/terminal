@@ -6,9 +6,10 @@ $(function() {
     var user = false;
     var pass = false;
     var username = "dave";
-    var password = "grim rasputin is dead";
-    var anagram = "paradigm industries";
+    var password = "grimrasputinisdead";
+    var anagram = "paradigmindustries";
     var typeSpeed = 200;
+	var startDelay = 3300;
 
     function init() {
         $.getJSON( "boot_text.json", function( data ) {
@@ -33,7 +34,7 @@ $(function() {
             setTimeout(function(){
                 addLine();
                 $terminal.scrollTop($terminal[0].scrollHeight);
-            }, typeSpeed);
+            }, startDelay);
         });
     };
 

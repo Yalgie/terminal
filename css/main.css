@@ -446,15 +446,52 @@ main { position: relative; height: 100%; }
     display: block;
     background-color: #212121;
     background-position: center;
-	width: 100%;
-    height: 100%;
-    padding: 24px 48px;
+	width: 0; /* no width & height set till intro animation done, same for padding */
+    height: 0;
+	margin: 24% auto 0;
     overflow: auto;
 	border-radius: 2px;
 	border: 2px solid #9c9c9c;
     border-top: 39px solid #9c9c9c;
+	opacity: 0;
 	-webkit-box-shadow: 0 0 12px 1px rgba(117, 117, 117, 0.75);
-			box-shadow: 0 0 12px 1px rgba(117, 117, 117, 0.75);	
+			box-shadow: 0 0 12px 1px rgba(117, 117, 117, 0.75);
+	-webkit-animation: terminal_on 2s 0.6s forwards linear;
+			animation: terminal_on 2s 0.6s forwards linear;
+}
+@-webkit-keyframes terminal_on {
+	 0% { opacity: 0; width: 0; height: 0; margin: 24% auto 0; padding: 0; }
+	10% { opacity: 1; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	20% { opacity: 0; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	30% { opacity: 1; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	40% { opacity: 0; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	50% { opacity: 1; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	60% { opacity: 0; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	84% { opacity: 1; width: 100%; height: 0; margin: 24% auto 0; padding: 0; }
+	100% {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 24px 48px;
+		opacity: 1;
+	}
+}
+@keyframes terminal_on {
+	 0% { opacity: 0; width: 0; height: 0; margin: 24% auto 0; padding: 0; }
+	10% { opacity: 1; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	20% { opacity: 0; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	33% { opacity: 1; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	45% { opacity: 0; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	52% { opacity: 1; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	64% { opacity: 0; width: 0; height: 0; margin: 24% auto 0; padding: 0;}
+	88% { opacity: 1; width: 100%; height: 0; margin: 24% auto 0; padding: 0 48px; }
+	100% {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 24px 48px;
+		opacity: 1;
+	}
 }
 /* Lined 'crt screen' look */
 .computer_screen_overlay {
