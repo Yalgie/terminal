@@ -53,6 +53,10 @@ $(function() {
                 checkCommand();
             };
             
+            if (e.which === 32) {
+                return false;
+            };
+            
             // if ($cmd.html().length <= dir.length) {
             //     $cmd.html(dir);
             // };
