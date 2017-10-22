@@ -67,7 +67,7 @@ $(function() {
             var valid = false;
 
             if (pass && cmd == anagram) {
-                $text.append("Enter Anagram: " + cmd + "<br/>")
+                $text.append("For 2-step authentication, please rearrange the following letters into correct order<br/>GRIMRASPUTINISDEAD -> " + cmd + "<br/>")
                 $text.append("<span class='correct'>Anagram Accepted</span> <br/><br/><br/>");
                 $cmd.html("")
                 $cmdPrefix.html("")
@@ -85,7 +85,7 @@ $(function() {
                 $text.append("<span class='correct'>Username Recognized</span><br/><br/>");
                 $cmdPrefix.html("Enter Password:")
             }
-            else if (user && cmd == password) {
+			else if (user && cmd == password) {
                 pass = true;
                 $text.append("Enter Password: " + cmd + "<br/>")
                 $text.append("<span class='correct'>Password Accepted</span><br/><br/>");
@@ -139,6 +139,8 @@ $(function() {
                 $terminal.scrollTop($terminal[0].scrollHeight);
             }, typeSpeed);
         });
+		
+		$cmd.hide();
     }
 
     customConsoleLog("Dave Terminal // Developed by 2Wolves", "#1B1632", "#A292E7");
