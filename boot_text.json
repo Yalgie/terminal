@@ -1,14 +1,18 @@
 {
     "text": [
-        "C:> diskpart<br/><br/>",
-        "Diskpart> list volume<br/>",
-        "<table><thead><tr><th width='175px'>Volume #</th><th width='175px'>Label</th><th width='175px'>Size</th><th width='175px'>Type</th></tr></thead></table>",
-        "<table><tbody><tr><td width='175px'>Volume 0</td><td width='175px'> </td><td width='175px'>2300 MB</td><td width='175px'>CD-ROM</td></tr></tbody></table>",
-        "<table><tbody><tr><td width='175px'>Volume 1</td><td width='175px'>Main Drive</td><td width='175px'>498 GB</td><td width='175px'>Partition</td></tr></tbody></table>",
-        "<table><tbody><tr><td width='175px'>Volume 2</td><td width='175px'>Recovery Drive</td><td width='175px'>800 MB</td><td width='175px'>Removable</td></tr></tbody></table>",
-        "<table><tbody><tr><td width='175px'>Volume 3</td><td width='175px'>Paradigm Ind</td><td width='175px'>1200 MB</td><td width='175px'>Mountable</td></tr></tbody></table><br/>",
-        "Diskpart> select volume 1<br/>",
-        "Diskpart> enter username to continue<br/><br/>"
+        "DIGMOPTIK [Version 2.16.1985]<br/>",
+		"Copyright (c) 2021 Paradigm Industries. All rights reserved.<br/>",
+		"<br/>",
+        "C:> Diskpart > Volumes<br/><br/>",
+        "Listing volumes...<br/>",
+        "<table><tr><td width='175px'>VOLUME #</td><td width='175px'>LABEL</td><td width='175px'>SIZE</td><td width='175px'>TYPE</td></tr></table>",
+        "<table><tr><td width='175px'>Volume 0</td><td width='175px'></td><td width='175px'>2300 MB</td><td width='175px'>CD-ROM</td></tr></table>",
+        "<table><tr><td width='175px'>Volume 1</td><td width='175px'>Main Drive</td><td width='175px'>498 GB</td><td width='175px'>Partition</td></tr></table>",
+        "<table><tr><td width='175px'>Volume 2</td><td width='175px'>Recovery Drive</td><td width='175px'>800 MB</td><td width='175px'>Removable</td></tr></table>",
+        "<table><tr><td width='175px'>Volume 3</td><td width='175px'>Paradigm Ind</td><td width='175px'>1200 MB</td><td width='175px'>Mountable</td></tr></table><br/>",
+        "C:> Diskpart > Volumes > Volume 3<br/>",
+		"<br/>",
+        "Enter Username to Continue<br/>"
     ]
 }
 

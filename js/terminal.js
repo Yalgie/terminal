@@ -56,13 +56,9 @@ $(function() {
             if (e.which === 32) {
                 return false;
             };
-            
-            // if ($cmd.html().length <= dir.length) {
-            //     $cmd.html(dir);
-            // };
         });
 
-        $cmdPrefix.html("Enter Username: ");
+        $cmdPrefix.html("Username: ");
     };
 
     function checkCommand() {
@@ -71,51 +67,40 @@ $(function() {
             var valid = false;
 
             if (pass && cmd == anagram) {
-                // $text.append("Anogram: " + cmd + "<br/>");
                 $text.append("Enter Anagram: " + cmd + "<br/>")
-                $text.append("<span class='correct'>Anagram Accepted</span> <br/>");
+                $text.append("<span class='correct'>Anagram Accepted</span> <br/><br/><br/>");
                 $cmd.html("")
                 $cmdPrefix.html("")
                 startDirList()
             }
             else if (pass) {
-                // $text.append("Anogram: " + cmd + "<br/>");
-                $text.append("Enter Anagram: " + cmd + "<br/>")
+                $text.append("For 2-step authentication, please rearrange the following letters into correct order<br/>GRIMRASPUTINISDEAD -> " + cmd + "<br/>")
                 $text.append("<span class='incorrect'>Anagram Incorrect</span> <br/>");
-                $cmdPrefix.html("Enter Anagram:");
+                $cmdPrefix.html("Please try again... ->");
             };
 
             if (!user && cmd == username) {
                 user = true;
-                // $text.append("Username: " + cmd + "<br/>");
-                $text.append("Enter Username: " + cmd + "<br/>")
-                $text.append("<span class='correct'>Username Recognized</span><br/>");
-                // $text.append("Enter Password:<br/>");
+                $text.append("Username: " + cmd + "<br/>")
+                $text.append("<span class='correct'>Username Recognized</span><br/><br/>");
                 $cmdPrefix.html("Enter Password:")
             }
             else if (user && cmd == password) {
                 pass = true;
-                // $text.append("Password " + cmd + "<br/>");
                 $text.append("Enter Password: " + cmd + "<br/>")
-                $text.append("<span class='correct'>Password Accepted</span><br/>");
-                // $text.append("Enter Anagram:<br/>");
+                $text.append("<span class='correct'>Password Accepted</span><br/><br/>");
                 $cmdPrefix.html("For 2-step authentication, please rearrange the following letters into correct order<br/>GRIMRASPUTINISDEAD ->")
-                // $cmd.val(dir);
             }
             else if (!pass) {
                 if (user) {
-                    // $text.append("Password " + cmd + "<br/>");
                     $text.append("Enter Password: " + cmd + "<br/>")
                     $text.append("<span class='incorrect'>Password Incorrect</span> <br/>")
-                    // $text.append("Enter Password:<br/>")
                     $cmdPrefix.html("Enter Password:")
                 }
                 else {
-                    // $text.append("Username " + cmd + "<br/>");
-                    $text.append("Enter Username: " + cmd + "<br/>")
+                    $text.append("Username: " + cmd + "<br/>")
                     $text.append("<span class='incorrect'>Username Incorrect</span> <br/>")
-                    // $text.append("Enter Username:<br/>")
-                    $cmdPrefix.html("Enter Username:")
+                    $cmdPrefix.html("Username:")
                 }
             };
 
