@@ -237,6 +237,9 @@ main { position: relative; height: 100%; }
 .footer_link p { line-height: 0.6rem; }
 .fl_copyright_fb { position: relative; }
 .icon_fb { fill: #3b5998; width: 20px; height: 20px; }
+.icon_vimeo { width: 20px; height: 20px; }
+.icon_vimeo .fil0 { fill: #00BCD4; }
+.icon_vimeo .fil1 { fill: #fff; }
 .icon_fb:hover { fill: #67ded2; }
 
 @-webkit-keyframes footer_on {

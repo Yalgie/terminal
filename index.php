@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <!-- Facebook Logo -->
 	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="display: none;" viewBox="0 0 100 100">
 		<title>The 'What Happened To Dave' Facebook Page!</title>
 		<symbol id="icon_fb" viewBox="0 0 259 259">
@@ -25,6 +26,15 @@
 			</path>
 		</symbol>
 	</svg>
+	
+    <!-- Vimeo Logo -->
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="display: none;" viewBox="0 0 6.82666 6.82666">
+        <title>View 'Dave' on Vimeo!</title>
+        <symbol id="icon_vimeo">
+            <rect class="fil0" height="6.82667" rx="1.45635" ry="1.45635" width="6.82667"/>
+            <path class="fil1" d="M4.90076 1.59237c-0.584402,-0.0190669 -0.97989,0.308756 -1.18695,0.98389 0.106626,-0.0439567 0.210232,-0.0661181 0.311366,-0.0661181 0.213118,-3.93701e-006 0.307425,0.119575 0.282256,0.359476 -0.0125315,0.145303 -0.106705,0.356594 -0.282256,0.633988 -0.176398,0.277752 -0.308071,0.41652 -0.395488,0.41652 -0.113594,0 -0.21698,-0.214661 -0.311366,-0.643425 -0.0317283,-0.126232 -0.0882638,-0.447811 -0.169358,-0.965323 -0.0760394,-0.479394 -0.276835,-0.703331 -0.603327,-0.671819 -0.138138,0.0126575 -0.344984,0.139114 -0.621185,0.378528 -0.201445,0.183008 -0.405555,0.366016 -0.613106,0.548949l0.19772 0.255244c0.188697,-0.132571 0.299051,-0.198543 0.329642,-0.198543 0.144673,0 0.279862,0.226957 0.405484,0.680752 0.112728,0.416803 0.226327,0.833035 0.339559,1.24926 0.168732,0.45415 0.376638,0.681331 0.621193,0.681331 0.395634,-3.93701e-006 0.879941,-0.371992 1.45112,-1.11641 0.55261,-0.712693 0.837882,-1.27417 0.85715,-1.68449 0.0253937,-0.548465 -0.178646,-0.829291 -0.612453,-0.841807z"/>
+        </symbol>
+    </svg>
 
 	<div id="wrap">
 		<main>
@@ -50,7 +60,14 @@
 						</svg>
 					</a>
 				</p>
-				<p class="fl_vimeo">video evidence on <a href="https://vimeo.com/shawnlebert/dave" target="_blank">Vimeo</a></p>
+				
+				<p class="fl_vimeo">video evidence on 
+				<a href="https://vimeo.com/shawnlebert/dave" target="_blank">
+                    <svg class="icon_vimeo">
+                        <use xlink:href="#icon_vimeo"></use>
+                    </svg>
+				</a>
+				</p>
 			</div>
 			
 			<div class="computer_screen_overlay"></div> 
