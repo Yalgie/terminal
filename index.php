@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         
-        <title>Welcome!</title>
+        <title>What Happened to Dave...?</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -43,14 +43,14 @@
 			<div class="clear"></div>
 			
 			<div class="footer_link">
-				<p class="fl_copyright_fb">© <?php echo date("Y"); ?> <a href="https://www.google.com.au/" target="_blank">Shawn Lebert</a>, all rights reserved
+				<p class="fl_copyright_fb">© <?php echo date("Y"); ?> Apollonian Entertainment, all rights reserved
 					<a href="https://www.facebook.com/whathappenedtodave" target="_blank">
 						<svg class="icon_fb">
 							<use xlink:href="#icon_fb"></use>
 						</svg>
 					</a>
 				</p>
-				<p class="fl_vimeo">video evidence on <a href="https://vimeo.com/183890658" target="_blank">Vimeo</a></p>
+				<p class="fl_vimeo">video evidence on <a href="https://vimeo.com/shawnlebert/dave" target="_blank">Vimeo</a></p>
 			</div>
 			
 			<div class="computer_screen_overlay"></div> 
