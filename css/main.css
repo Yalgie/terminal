@@ -235,12 +235,10 @@ main { position: relative; height: 100%; }
 			animation: footer_on 0.6s 6.6s forwards linear;
 }
 .footer_link p { line-height: 0.6rem; }
-.fl_copyright_fb { position: relative; }
+.fl_copyright_fb, .fl_vimeo { position: relative; }
 .icon_fb { fill: #3b5998; width: 20px; height: 20px; }
-.icon_vimeo { width: 20px; height: 20px; }
-.icon_vimeo .fil0 { fill: #00BCD4; }
-.icon_vimeo .fil1 { fill: #fff; }
-.icon_fb:hover { fill: #67ded2; }
+.icon_vimeo { fill: #32B8E8; width: 20px; height: 20px; }
+.icon_fb:hover, .icon_vimeo:hover { fill: #67ded2; }
 
 @-webkit-keyframes footer_on {
 	  0% { opacity: 0; }
@@ -431,9 +429,10 @@ span.space-2 { padding-left: 100px; }
     
     .computer_background { padding-bottom: 9%; }
 	.footer_link { bottom: 4px; text-align: left; }
-	.fl_copyright_fb { float: left; margin-left: 24px; 	}
+	.fl_copyright_fb { float: left; margin-left: 24px;	}
 	.icon_fb { position: absolute; right: -33px; bottom: -6px; }
-	.fl_vimeo { float: right; margin-right: 24px; }
+	.fl_vimeo { float: right; margin-right: 57px; }
+	.icon_vimeo { position: absolute; right: -28px; bottom: -6px; }
     
 }
 
