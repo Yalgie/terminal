@@ -3,6 +3,7 @@ $(function() {
     var $cmd = $terminal.find(".typing");
     var $cmdPrefix = $terminal.find(".cmdPrefix");
     var $text = $terminal.find(".text");
+    var valid = true;
     var user = false;
     var pass = false;
     var username = "dave";
@@ -47,31 +48,33 @@ $(function() {
             $cmd.html($cmd.html());
         });
 
-        $terminal.on("keydown", function(e) {
-            if (e.which == 13) {
-                e.preventDefault();
-                checkCommand();
-            };
-            
-            if (e.which === 32) {
-                return false;
-            };
-        });
+        if (valid) {
+            $cmd.on("keydown", function(e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    checkCommand();
+                };
 
-        $cmdPrefix.html("Username: ");
+                if (e.which === 32) {
+                    return false;
+                };
+            });
+
+            $cmdPrefix.html("Username: ");
+        }
     };
 
     function checkCommand() {
-        if ($cmd.text() != undefined) {
+        if (($cmd.text() != undefined) && valid) {
             var cmd = $cmd.text().toLowerCase();
-            var valid = false;
 
             if (pass && cmd == anagram) {
+                valid = false;
                 $text.append("For 2-step authentication, please rearrange the following letters into correct order<br/>GRIMRASPUTINISDEAD -> " + cmd + "<br/>")
                 $text.append("<span class='correct'>Anagram Accepted</span> <br/><br/><br/>");
                 $cmd.html("")
                 $cmdPrefix.html("")
-                startDirList()
+                showSecretData01()
             }
             else if (pass) {
                 $text.append("For 2-step authentication, please rearrange the following letters into correct order<br/>GRIMRASPUTINISDEAD -> " + cmd + "<br/>")
@@ -113,8 +116,45 @@ $(function() {
         console.log('%c:: ' + message + ' :: ', 'background: ' + bg + '; color: ' + color + '');
     };
 
-    function startDirList() {
-        $.getJSON( "dir_text.json", function( data ) {
+    function showSecretData01(e) {
+        $.getJSON( "secretData01.json", function( data ) {
+            console.log(data)
+            var iCount = 0;
+
+            function addLine() {
+                $text.append(data.text[iCount])
+
+                if (iCount < data.text.length) {
+                    setTimeout(function(){
+                        iCount++;
+                        addLine();
+                        $terminal.scrollTop($terminal[0].scrollHeight);
+                    }, typeSpeed);
+                }
+                else {
+                    // bindTerminalEvents();
+                    $cmd.focus();
+                }
+            };
+
+            setTimeout(function(){
+                addLine();
+                $terminal.scrollTop($terminal[0].scrollHeight);
+            }, typeSpeed);
+		
+            $terminal.on("keydown", function(e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    showSecretData02();
+                };
+            });
+        });
+        
+        $cmd.hide();
+    }
+    
+    function showSecretData02() {
+        $.getJSON( "secretData02.json", function( data ) {
             console.log(data)
             var iCount = 0;
 
@@ -139,11 +179,9 @@ $(function() {
                 $terminal.scrollTop($terminal[0].scrollHeight);
             }, typeSpeed);
         });
-		
-		$cmd.hide();
     }
 
-    customConsoleLog("Dave Terminal // Developed by 2Wolves", "#1B1632", "#A292E7");
+    customConsoleLog("'What Happened to Dave?' Terminal // Developed by 2Wolves", "#1B1632", "#A292E7");
     customConsoleLog("Visit us @ http://2wolves.io", "#1B1632", "#A292E7");
 
     init();

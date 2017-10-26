@@ -424,6 +424,11 @@ span.space-2 { padding-left: 100px; }
 	text-shadow: 0 0 2px rgba(27, 181, 231, 0.75);
 }
 
+.blinking_text {
+    -webkit-animation: cursor_blink 1.25s steps(1) infinite;
+			animation: cursor_blink 1.25s steps(1) infinite;
+}
+
 
 @media (min-width: 660px) {
     
