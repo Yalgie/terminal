@@ -142,7 +142,7 @@ $(function() {
                 $terminal.scrollTop($terminal[0].scrollHeight);
             }, typeSpeed);
 		
-            $terminal.on("keydown", function(e) {
+            $terminal.one("keydown", function(e) {
                 if (e.which == 13) {
                     e.preventDefault();
                     showSecretData02();
@@ -153,7 +153,7 @@ $(function() {
         $cmd.hide();
     }
     
-    function showSecretData02() {
+    function showSecretData02(e) {
         $.getJSON( "secretData02.json", function( data ) {
             console.log(data)
             var iCount = 0;
@@ -169,7 +169,108 @@ $(function() {
                     }, typeSpeed);
                 }
                 else {
-                    // bindTerminalEvents();
+                    $cmd.focus();
+                }
+            };
+
+            setTimeout(function(){
+                addLine();
+                $terminal.scrollTop($terminal[0].scrollHeight);
+            }, typeSpeed);
+            
+            $terminal.one("keydown", function(e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    showSecretData03();
+                };
+            });
+        });
+    }
+    
+    function showSecretData03(e) {
+        $.getJSON( "secretData03.json", function( data ) {
+            console.log(data)
+            var iCount = 0;
+
+            function addLine() {
+                $text.append(data.text[iCount])
+
+                if (iCount < data.text.length) {
+                    setTimeout(function(){
+                        iCount++;
+                        addLine();
+                        $terminal.scrollTop($terminal[0].scrollHeight);
+                    }, typeSpeed);
+                }
+                else {
+                    $cmd.focus();
+                }
+            };
+
+            setTimeout(function(){
+                addLine();
+                $terminal.scrollTop($terminal[0].scrollHeight);
+            }, typeSpeed);
+            
+            $terminal.one("keydown", function(e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    showSecretData04();
+                };
+            });
+        });
+    }
+    
+    function showSecretData04(e) {
+        $.getJSON( "secretData04.json", function( data ) {
+            console.log(data)
+            var iCount = 0;
+
+            function addLine() {
+                $text.append(data.text[iCount])
+
+                if (iCount < data.text.length) {
+                    setTimeout(function(){
+                        iCount++;
+                        addLine();
+                        $terminal.scrollTop($terminal[0].scrollHeight);
+                    }, typeSpeed);
+                }
+                else {
+                    $cmd.focus();
+                }
+            };
+
+            setTimeout(function(){
+                addLine();
+                $terminal.scrollTop($terminal[0].scrollHeight);
+            }, typeSpeed);
+            
+            $terminal.one("keydown", function(e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    showSecretData05();
+                };
+            });
+        });
+    }
+    
+    function showSecretData05(e) {
+        $.getJSON( "secretData05.json", function( data ) {
+            console.log(data)
+            var iCount = 0;
+
+            function addLine() {
+                $text.append(data.text[iCount])
+
+                if (iCount < data.text.length) {
+                    setTimeout(function(){
+                        iCount++;
+                        addLine();
+                        $terminal.scrollTop($terminal[0].scrollHeight);
+                    }, typeSpeed);
+                }
+                else {
                     $cmd.focus();
                 }
             };
