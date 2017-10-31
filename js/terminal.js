@@ -117,7 +117,7 @@ $(function() {
     };
 
     function showSecretData01(e) {
-        $.getJSON( "secretData01.json", function( data ) {
+        $.getJSON( "secretData01.json", function(data) {
             console.log(data)
             var iCount = 0;
 
@@ -154,7 +154,7 @@ $(function() {
     }
     
     function showSecretData02(e) {
-        $.getJSON( "secretData02.json", function( data ) {
+        $.getJSON( "secretData02.json", function(data) {
             console.log(data)
             var iCount = 0;
 
@@ -188,7 +188,7 @@ $(function() {
     }
     
     function showSecretData03(e) {
-        $.getJSON( "secretData03.json", function( data ) {
+        $.getJSON( "secretData03.json", function(data) {
             console.log(data)
             var iCount = 0;
 
@@ -222,7 +222,7 @@ $(function() {
     }
     
     function showSecretData04(e) {
-        $.getJSON( "secretData04.json", function( data ) {
+        $.getJSON( "secretData04.json", function(data) {
             console.log(data)
             var iCount = 0;
 
@@ -256,7 +256,7 @@ $(function() {
     }
     
     function showSecretData05(e) {
-        $.getJSON( "secretData05.json", function( data ) {
+        $.getJSON( "secretData05.json", function(data) {
             console.log(data)
             var iCount = 0;
 
