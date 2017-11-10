@@ -60,7 +60,7 @@
 			<div class="clear"></div>
 			
 			<div class="footer_link">
-				<p class="fl_copyright_fb">© 2017 Apollonian Entertainment, all rights reserved
+				<p class="fl_copyright_fb">© <span class="this_year"></span> Apollonian Entertainment, all rights reserved
 					<a href="https://www.facebook.com/whathappenedtodave" target="_blank">
 						<svg class="icon_fb">
 							<use xlink:href="#icon_fb"></use>
@@ -80,5 +80,12 @@
 			<div class="computer_screen_overlay"></div> 
 		</main>
 	</div>
+	
+	<script>
+        $(function() {
+            var currentYear = new Date().getFullYear();
+            $('.this_year').html(currentYear);
+        });
+    </script>
 </body>
 </html>
