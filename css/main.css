@@ -85,74 +85,6 @@ template { display: none; }
 [hidden] { display: none; }
 
 
-/* FRAMEWORK
-======================================================== */
-
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-.column, .columns {
-    width: 100%;
-    float: left;
-    box-sizing: border-box;
-}
-/* For devices larger than 320px */
-@media (min-width: 320px) { .container { width: 84%; padding: 0; } }
-/* For devices larger than 400px */
-@media (min-width: 480px) { .container { width: 85%; padding: 0; } }
-/* For devices larger than 550px */
-@media (min-width: 660px) {
-    .container { width: 80%; }
-    .column, .columns { margin-left: 4%; }
-    .column:first-child, .columns:first-child { margin-left: 0; }
-
-    .one.column,
-    .one.columns                    { width: 4.66666666667%; }
-    .two.columns                    { width: 13.3333333333%; }
-    .three.columns                  { width: 22%;            }
-    .four.columns                   { width: 30.6666666667%; }
-    .five.columns                   { width: 39.3333333333%; }
-    .six.columns                    { width: 48%;            }
-    .seven.columns                  { width: 56.6666666667%; }
-    .eight.columns                  { width: 65.3333333333%; }
-    .nine.columns                   { width: 74.0%;          }
-    .ten.columns                    { width: 82.6666666667%; }
-    .eleven.columns                 { width: 91.3333333333%; }
-    .twelve.columns                 { width: 100%; margin-left: 0; }
-
-    .one-third.column               { width: 30.6666666667%; }
-    .two-thirds.column              { width: 65.3333333333%; }
-
-    .one-half.column                { width: 48%; }
-}
-
-/* For essentially any non-mobile device (ie desktop upwards), larger than 1025px */
-@media (min-width: 1025px) { .container { width: 88%; } }
-
-
-/* MISC
-======================================================== */
-
-hr {
-    margin-top: 3rem;
-    margin-bottom: 3.5rem;
-    border-width: 0;
-    border-top: 1px solid #E1E1E1;
-}
-.container:after,
-.row:after,
-.u-cf {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
 /* FONTS
 ======================================================== */
 
@@ -169,11 +101,7 @@ hr {
 /* TYPOGRAPHY
 ======================================================== */
 
-p {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    margin-top: 0;
-}
+p { font-size: 1.6rem; line-height: 2.8rem; margin-top: 0; }
 i, em { font-style: italic; }
 b, strong { font-weight: bold; font-weight: 700; }
 a { color: #4ffbea; text-decoration: none; }
@@ -195,7 +123,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: greyscale;
 }
-/* -- Main Wrapper & Sticky Footer Properties --*/
 #wrap {
     display: table;
     position: relative;
@@ -206,14 +133,6 @@ header, footer, main { display: table-row; }
 header, footer { height: 1px; }
 main { position: relative; height: 100%; }
 
-.left { float: left; }
-.right { float: right; }
-.center { display: block; margin: 0 auto; clear: both; text-align: center; }
-.clear { clear: both; }
-.hide, .displaynone, .none { display: none; }
-.disabled { pointer-events: none; opacity: 0.4; }
-
-/*-- Addition of global Box-Sizing rule to all elements, including ones not covered by framework --*/
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -330,13 +249,24 @@ main { position: relative; height: 100%; }
 /* Lined 'crt screen' look */
 .computer_screen_overlay {
 	position: absolute;
-	background: repeating-linear-gradient(to bottom, rgba(33, 33, 33, 0.24), rgba(33, 33, 33, 0.24) 1px, rgba(18, 18, 18, 0.57) 1px, rgba(18, 18, 18, 0.75) 2px);
+	background: -webkit-repeating-linear-gradient(
+        bottom,
+        rgba(33, 33, 33, 0.24),
+        rgba(33, 33, 33, 0.24) 1px,
+        rgba(18, 18, 18, 0.57) 1px,
+        rgba(18, 18, 18, 0.75) 2px);
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(33, 33, 33, 0.24),
+        rgba(33, 33, 33, 0.24) 1px,
+        rgba(18, 18, 18, 0.57) 1px,
+        rgba(18, 18, 18, 0.75) 2px);
+    background-size: 100% 2px, 3px 100%;
 	width: 100%;
 	height: 100%;
 	opacity: 0.93;
 	pointer-events: none;
 }
-
 #terminal {
     position: relative;
 	font-family: 'VT323';
@@ -366,7 +296,6 @@ main { position: relative; height: 100%; }
 }
 #terminal .typing:focus { color: transparent; text-shadow: 0 0 0 #fff, 0 0 2px rgba(255, 255, 255, 0.75); }
 #terminal .text { margin-bottom: 9px; }
-
 #terminal .text table { width: 100%; }
 #terminal .text table { padding: 2px 0; border-bottom: 1px dashed #9d9d9d; }
 #terminal .text table:first-of-type { padding: 6px 0; border-bottom: 2px solid #fff; }
@@ -386,7 +315,6 @@ main { position: relative; height: 100%; }
     -webkit-animation: cursor_blink 1.25s steps(1) infinite;
 			animation: cursor_blink 1.25s steps(1) infinite;
 }
-
 @-webkit-keyframes cursor_blink {
 	0% { opacity: 0; }
 	50% { opacity: 1; }
@@ -418,12 +346,7 @@ span.space-2 { padding-left: 100px; }
 }
 .section_title::before { margin-top: -4px; }
 .section_title::after { margin-top: 6px; }
-
-.houseofleaves {
-	color: #3c8cd1;
-	text-shadow: 0 0 2px rgba(27, 181, 231, 0.75);
-}
-
+.houseofleaves { color: #3c8cd1; text-shadow: 0 0 2px rgba(27, 181, 231, 0.75); }
 .blinking_text {
     -webkit-animation: cursor_blink 1.25s steps(1) infinite;
 			animation: cursor_blink 1.25s steps(1) infinite;
