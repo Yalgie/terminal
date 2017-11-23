@@ -294,7 +294,12 @@ main { position: relative; height: 100%; }
     outline: none;
     resize: none;
 }
-#terminal .typing:focus { color: transparent; text-shadow: 0 0 0 #fff, 0 0 2px rgba(255, 255, 255, 0.75); }
+#terminal .typing:focus {
+    color: transparent;
+    width: inherit;
+    text-shadow: 0 0 0 #fff, 0 0 2px rgba(255, 255, 255, 0.75);
+    text-shadow: 0 0 1px 0.02em rgba(255, 255, 255, 1);
+}
 #terminal .text { margin-bottom: 9px; }
 #terminal .text table { width: 100%; }
 #terminal .text table { padding: 2px 0; border-bottom: 1px dashed #9d9d9d; }

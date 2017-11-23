@@ -9,33 +9,39 @@ $(function() {
     var username = "dave";
     var password = "grimrasputinisdead";
     var anagram = "paradigmindustries";
-    var typeSpeed = 200;
-	var startDelay = 3300;
+    
+    function renderLines(data) {
+        var typeSpeed = 200;
+        var startDelay = 3300;
+        var iCount = 0;
+        
+        function renderText(data) {
+            $text.append(data.text[iCount])
 
-    function init() {
-        $.getJSON( "boot_text.json", function( data ) {
-            var iCount = 0;
-
-            function addLine() {
-                $text.append(data.text[iCount])
-
-                if (iCount < data.text.length) {
-                    setTimeout(function(){
-                        iCount++;
-                        addLine();
-                        $terminal.scrollTop($terminal[0].scrollHeight);
-                    }, typeSpeed);
-                }
-                else {
-                    bindTerminalEvents();
-                    $cmd.focus();
-                }
+            if (iCount < data.text.length) {
+                setTimeout(function(){
+                    iCount++;
+                    renderText(data);
+                    $terminal.scrollTop($terminal[0].scrollHeight);
+                }, typeSpeed);
+            } else {
+                bindTerminalEvents();
+                $cmd.focus();
             };
+            
+            $terminal.scrollTop($terminal[0].scrollHeight);
+        }
+        
+        if (valid) {
+            setTimeout(function(){renderText(data);}, startDelay);
+        } else {
+            setTimeout(function(){renderText(data);}, 200);
+        }
+    };
 
-            setTimeout(function(){
-                addLine();
-                $terminal.scrollTop($terminal[0].scrollHeight);
-            }, startDelay);
+    function init(data) {
+        $.getJSON( "boot_text.json", function(data) {
+            renderLines(data);
         });
     };
 
@@ -112,33 +118,9 @@ $(function() {
         };
     };
 
-    function customConsoleLog(message, bg, color) {
-        console.log('%c:: ' + message + ' :: ', 'background: ' + bg + '; color: ' + color + '');
-    };
-
     function showSecretData01(e) {
         $.getJSON( "secretData01.json", function(data) {
-            var iCount = 0;
-
-            function addLine() {
-                $text.append(data.text[iCount])
-
-                if (iCount < data.text.length) {
-                    setTimeout(function(){
-                        iCount++;
-                        addLine();
-                        $terminal.scrollTop($terminal[0].scrollHeight);
-                    }, typeSpeed);
-                }
-                else {
-                    $cmd.focus();
-                }
-            };
-
-            setTimeout(function(){
-                addLine();
-                $terminal.scrollTop($terminal[0].scrollHeight);
-            }, typeSpeed);
+            renderLines(data);
 		
             $terminal.one("keydown", function(e) {
                 if (e.which == 13) {
@@ -153,27 +135,7 @@ $(function() {
     
     function showSecretData02(e) {
         $.getJSON( "secretData02.json", function(data) {
-            var iCount = 0;
-
-            function addLine() {
-                $text.append(data.text[iCount])
-
-                if (iCount < data.text.length) {
-                    setTimeout(function(){
-                        iCount++;
-                        addLine();
-                        $terminal.scrollTop($terminal[0].scrollHeight);
-                    }, typeSpeed);
-                }
-                else {
-                    $cmd.focus();
-                }
-            };
-
-            setTimeout(function(){
-                addLine();
-                $terminal.scrollTop($terminal[0].scrollHeight);
-            }, typeSpeed);
+            renderLines(data);
             
             $terminal.one("keydown", function(e) {
                 if (e.which == 13) {
@@ -186,27 +148,7 @@ $(function() {
     
     function showSecretData03(e) {
         $.getJSON( "secretData03.json", function(data) {
-            var iCount = 0;
-
-            function addLine() {
-                $text.append(data.text[iCount])
-
-                if (iCount < data.text.length) {
-                    setTimeout(function(){
-                        iCount++;
-                        addLine();
-                        $terminal.scrollTop($terminal[0].scrollHeight);
-                    }, typeSpeed);
-                }
-                else {
-                    $cmd.focus();
-                }
-            };
-
-            setTimeout(function(){
-                addLine();
-                $terminal.scrollTop($terminal[0].scrollHeight);
-            }, typeSpeed);
+            renderLines(data);
             
             $terminal.one("keydown", function(e) {
                 if (e.which == 13) {
@@ -219,27 +161,7 @@ $(function() {
     
     function showSecretData04(e) {
         $.getJSON( "secretData04.json", function(data) {
-            var iCount = 0;
-
-            function addLine() {
-                $text.append(data.text[iCount])
-
-                if (iCount < data.text.length) {
-                    setTimeout(function(){
-                        iCount++;
-                        addLine();
-                        $terminal.scrollTop($terminal[0].scrollHeight);
-                    }, typeSpeed);
-                }
-                else {
-                    $cmd.focus();
-                }
-            };
-
-            setTimeout(function(){
-                addLine();
-                $terminal.scrollTop($terminal[0].scrollHeight);
-            }, typeSpeed);
+            renderLines(data);
             
             $terminal.one("keydown", function(e) {
                 if (e.which == 13) {
@@ -252,29 +174,13 @@ $(function() {
     
     function showSecretData05(e) {
         $.getJSON( "secretData05.json", function(data) {
-            var iCount = 0;
-
-            function addLine() {
-                $text.append(data.text[iCount])
-
-                if (iCount < data.text.length) {
-                    setTimeout(function(){
-                        iCount++;
-                        addLine();
-                        $terminal.scrollTop($terminal[0].scrollHeight);
-                    }, typeSpeed);
-                }
-                else {
-                    $cmd.focus();
-                }
-            };
-
-            setTimeout(function(){
-                addLine();
-                $terminal.scrollTop($terminal[0].scrollHeight);
-            }, typeSpeed);
+            renderLines(data);
         });
     }
+    
+    function customConsoleLog(message, bg, color) {
+        console.log('%c:: ' + message + ' :: ', 'background: ' + bg + '; color: ' + color + '');
+    };
 
     customConsoleLog("'What Happened to Dave?' Terminal // Developed by 2Wolves", "#1B1632", "#A292E7");
     customConsoleLog("Visit us @ http://2wolves.io", "#1B1632", "#A292E7");
