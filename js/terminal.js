@@ -11,8 +11,6 @@ $(function() {
     var anagram = "paradigmindustries";
     
     function renderLines(data) {
-        var typeSpeed = 200;
-        var startDelay = 3300;
         var iCount = 0;
         
         function renderText(data) {
@@ -23,7 +21,7 @@ $(function() {
                     iCount++;
                     renderText(data);
                     $terminal.scrollTop($terminal[0].scrollHeight);
-                }, typeSpeed);
+                }, 200);
             } else {
                 bindTerminalEvents();
                 $cmd.focus();
@@ -33,7 +31,7 @@ $(function() {
         }
         
         if (valid) {
-            setTimeout(function(){renderText(data);}, startDelay);
+            setTimeout(function(){renderText(data);}, 3300);
         } else {
             setTimeout(function(){renderText(data);}, 200);
         }
