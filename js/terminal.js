@@ -119,6 +119,7 @@ $(function() {
     function showSecretData01(e) {
         $.getJSON( "secretData01.json", function(data) {
             renderLines(data);
+            $terminal.focus();
 		
             $terminal.one("keydown", function(e) {
                 if (e.which == 13) {
