@@ -11,6 +11,7 @@ $(function() {
     var valid = true;
     var user = false;
     var pass = false;
+    var contentDelay = 2600;
     
     var daveData = (function () {
         var daveData = null;
@@ -49,7 +50,7 @@ $(function() {
         if (valid) {
             setTimeout(function(){renderText(daveData);}, 3300);
         } else {
-            setTimeout(function(){renderText(daveData);}, 200);
+            setTimeout(function(){renderText(daveData);}, contentDelay);
         }
     };
 
@@ -89,7 +90,9 @@ $(function() {
             if (pass && cmd == (daveData[0].anagram)) {
                 valid = false;
                 $text.append("For 2-step authentication, please rearrange the following letters into correct order<br/>GRIMRASPUTINISDEAD -> " + cmd + "<br/>")
-                $text.append("<span class='correct'>Anagram Accepted</span> <br/><br/><br/>");
+                $text.append("<span class='correct'>Anagram Accepted</span> <br/><br/>");
+                $text.append("<span class='waiting_dot'>.</span> <span class='waiting_dot'>.</span> <span class='waiting_dot'>.</span> <span class='waiting_dot'>.</span><br/><br/>");
+                $text.find('.waiting_dot').addClass('on');
                 $cmd.html("");
                 $cmdPrefix.html("");
                 showSecretData01();
@@ -141,6 +144,7 @@ $(function() {
         $terminal.one("keydown", function(e) {
             if (e.which == 13) {
                 e.preventDefault();
+                contentDelay = 240;
                 showSecretData02();
             };
         });

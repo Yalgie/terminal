@@ -340,6 +340,32 @@ span.space-2 { padding-left: 100px; }
 
 .cmd-entry { user-select: none; padding-right: 15px; }
 
+.waiting_dot { opacity: 0; }
+.waiting_dot:nth-of-type(4n+0).on {
+    -webkit-animation: waiting_dot_on 0.12s 0.3s forwards linear;
+			animation: waiting_dot_on 0.12s 0.3s forwards linear;
+}
+.waiting_dot:nth-of-type(4n+1).on {
+    -webkit-animation: waiting_dot_on 0.12s 0.7s forwards linear;
+			animation: waiting_dot_on 0.12s 0.7s forwards linear;
+}
+.waiting_dot:nth-of-type(4n+2).on {
+    -webkit-animation: waiting_dot_on 0.12s 1.2s forwards linear;
+			animation: waiting_dot_on 0.12s 1.2s forwards linear;
+}
+.waiting_dot:nth-of-type(4n+3).on {
+    -webkit-animation: waiting_dot_on 0.12s 1.8s forwards linear;
+			animation: waiting_dot_on 0.12s 1.8s forwards linear;
+}
+@-webkit-keyframes waiting_dot_on {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes waiting_dot_on {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
 .section_title::before, .section_title::after {
 	content: "";
 	display: block;
